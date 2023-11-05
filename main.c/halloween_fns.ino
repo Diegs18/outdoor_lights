@@ -8,7 +8,7 @@ void chatter (void)
   randj = random (50);
   if (randj < 5)
     randj = 5;
-  randi = random(255-randj);
+  randi = random(NUM_LEDS-randj);
   
   
   for(uint8_t i=randi; i<randi+randj; i++)

@@ -11,12 +11,13 @@
 #define BLUE 4
 #define PURPLE 5
 #define ORANGE 7
-
+#define MAX_SPD 20
+#define MIN_SPD 150
 
 
   //uint8_t upDown   [NUM_LEDS/8]; //0 means up and 1 means down
 
-
+//uint8_t whiteVal [NUM_LEDS/2];
 uint8_t ran = 0;
 int runCnt=0;
 CRGB leds[NUM_LEDS];
@@ -32,14 +33,16 @@ void setXLEDs (uint8_t color1, uint8_t color2);
 
 void setup() {
   FastLED.addLeds<WS2812B, LED_PIN, GRB>(leds, NUM_LEDS);
-  FastLED.setMaxPowerInVoltsAndMilliamps(5, 800);
+  FastLED.setMaxPowerInVoltsAndMilliamps(5, 400);
   FastLED.clear();
   FastLED.show();
   Serial.begin(9600);
   //setLEDs2EveryOther(PURPLE, PURPLE); 
-  setXLEDs(ORANGE, PURPLE, 4);
+ // setXLEDs(RED, GREEN, 4);
 
 }
+
+/*
 /////////////////////////////////////////////////////////////////////////////////////
 /////// halloween Main
 /////////////////////////////////////////////////////////////////////////////////////
@@ -58,26 +61,30 @@ void loop()
   
   
 }
-
+*/
 
 /////////////////////////////////////////////////////////////////////////////////////
 /////// Christmas Main
 /////////////////////////////////////////////////////////////////////////////////////
-/*
+
 void loop() {
 
+
+  slideBackAndForth(RED, GREEN, 6);
     //slideLEDs(WHITE, RED, NUM_LEDS);
     //slideLEDs(GREEN, RED, NUM_LEDS);
     //slideLEDs(WHITE, RED, NUM_LEDS);
     //slideLEDs(WHITE, BLUE, NUM_LEDS); 
-    
-  /*while(runCnt<50000)
+  
+  
+  while(runCnt<5000)
   {
     ledTwinkle();
     runCnt++;
   }
   runCnt=0;
-  */
+}
+
 /*
   slideLEDs(WHITE, BLUE, NUM_LEDS); 
   blinkLEDs(WHITE, BLUE, 5);
@@ -91,5 +98,4 @@ void loop() {
   blinkLEDs(GREEN, RED, 6);
   blinkLEDs(WHITE, RED, 3);
 */
-
 

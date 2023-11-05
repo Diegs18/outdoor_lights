@@ -3,7 +3,7 @@
 /////////////////////////////////////////////////////////////////////////////////////
 void colorSelect(uint8_t color1, uint8_t color2)
 {
-
+  //Serial.println("setting colors");
   switch(color1)
   {
     case OFF:
